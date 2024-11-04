@@ -5,13 +5,16 @@ export const AppContext = createContext()
 
 const AppContextProvider = ({children}) => {
 
-    const [gadgets, setGadgets] = useState('Hllo');
+    const [activeCategory, setactiveCategory] = useState(1);
+
+    const [allGadgetsData, setallGadgetsData] = useState();
 
     return (
         <>
             <AppContext.Provider 
                 value={{
-                    gadgets, setGadgets
+                    activeCategory, setactiveCategory,
+                    allGadgetsData, setallGadgetsData 
                 }}>
                 {children}
             </AppContext.Provider>

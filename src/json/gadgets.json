@@ -1,0 +1,281 @@
+[
+  {
+      "product_id": "1",
+      "product_title": "Apple iPhone 14",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729004/iphone_vbvlun.webp",
+      "category": {
+          "name": "Smartphone",
+          "id": 2
+      },
+      "price": 999.99,
+      "description": "The latest iPhone with a powerful A16 chip.",
+      "specification": [
+          "6.1-inch Super Retina XDR display",
+          "12MP camera system",
+          "5G capable",
+          "Ceramic Shield front"
+      ],
+      "availability": true,
+      "rating": 4.8
+  },
+  {
+      "product_id": "2",
+      "product_title": "Samsung Galaxy S22",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729003/samsung_o4wwb5.webp",
+      "category": {
+          "name": "Smartphone",
+          "id": 2
+      },
+      "price": 799.99,
+      "description": "Experience the power of Samsung's latest flagship phone.",
+      "specification": [
+          "6.2-inch Dynamic AMOLED display",
+          "Triple camera system",
+          "128GB storage",
+          "5G capable"
+      ],
+      "availability": true,
+      "rating": 4.6
+  },
+  {
+      "product_id": "3",
+      "product_title": "Dell XPS 13",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729005/laptopdel_op1u0b.webp",
+      "category": {
+          "name": "Laptop",
+          "id": 3
+      },
+      "price": 1299.99,
+      "description": "Ultraportable laptop with stunning display.",
+      "specification": [
+          "13.3-inch FHD display",
+          "Intel Core i7 processor",
+          "16GB RAM",
+          "512GB SSD"
+      ],
+      "availability": true,
+      "rating": 4.7
+  },
+  {
+      "product_id": "4",
+      "product_title": "Apple Watch Series 7",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729005/watchapple_lopvfh.webp",
+      "category": {
+          "name": "Smartwatch",
+          "id": 4
+      },
+      "price": 399.99,
+      "description": "The most advanced Apple Watch yet.",
+      "specification": [
+          "Always-On Retina display",
+          "Blood Oxygen app",
+          "Fitness tracking features"
+      ],
+      "availability": true,
+      "rating": 4.5
+  },
+  {
+      "product_id": "5",
+      "product_title": "Fitbit Charge 5",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729004/firnesswatch_cwuerc.webp",
+      "category": {
+          "name": "Fitness Tracker",
+          "id": 4
+      },
+      "price": 179.95,
+      "description": "Advanced health and fitness tracker.",
+      "specification": [
+          "Built-in GPS",
+          "Daily readiness score",
+          "Stress management tools"
+      ],
+      "availability": true,
+      "rating": 4.4
+  },
+  {
+      "product_id": "6",
+      "product_title": "Lenovo ThinkPad X1 Carbon",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729005/htplaptop_clljyp.webp",
+      "category": {
+          "name": "Laptop",
+          "id": 3
+      },
+      "price": 1499.99,
+      "description": "Business laptop with a lightweight design.",
+      "specification": [
+          "14-inch display",
+          "Intel Core i7 processor",
+          "16GB RAM",
+          "1TB SSD"
+      ],
+      "availability": true,
+      "rating": 4.8
+  },
+  {
+      "product_id": "7",
+      "product_title": "Sony WH-1000XM4",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729004/headphone_ir3p4k.webp",
+      "category": {
+          "name": "Headphones",
+          "id": 5
+      },
+      "price": 349.99,
+      "description": "Industry-leading noise canceling headphones.",
+      "specification": [
+          "30-hour battery life",
+          "Touch sensor controls",
+          "Voice assistant compatible"
+      ],
+      "availability": true,
+      "rating": 4.9
+  },
+  {
+      "product_id": "8",
+      "product_title": "Bose SoundLink Revolve+",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729003/smartspeacker_rolj6p.webp",
+      "category": {
+          "name": "Speaker",
+          "id": 5
+      },
+      "price": 329.99,
+      "description": "360-degree sound with deep bass.",
+      "specification": [
+          "Bluetooth and NFC pairing",
+          "12 hours of playtime",
+          "Water-resistant"
+      ],
+      "availability": true,
+      "rating": 4.7
+  },
+  {
+      "product_id": "9",
+      "product_title": "Razer Blade 15",
+      "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729006/laptoprazer_dhl1fx.webp",
+      "category": {
+          "name": "Laptop",
+          "id": 3
+      },
+      "price": 1999.99,
+      "description": "Powerful gaming laptop with sleek design.",
+      "specification": [
+          "15.6-inch FHD display",
+          "Intel Core i7 processor",
+          "16GB RAM",
+          "1TB SSD",
+          "NVIDIA GeForce RTX 3070"
+      ],
+      "availability": true,
+      "rating": 4.6
+  },
+  {
+    "product_id": "10",
+    "product_title": "Amazon Echo Dot (4th Gen)",
+    "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729007/amazonsmartspeacker_eusxcw.webp",
+    "category": {
+      "name": "Smart Speaker",
+      "id": 5
+    },
+    "price": 49.99,
+    "description": "Smart speaker with Alexa.",
+    "specification": [
+      "Voice control your music",
+      "Control smart home devices",
+      "Compact design"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "11",
+    "product_title": "Asus ROG Zephyrus G14",
+    "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729005/assusroglaptop_hhmbmc.webp",
+    "category": {
+      "name": "Laptop",
+      "id": 3
+    },
+    "price": 1499.99,
+    "description": "Compact gaming laptop with powerful performance.",
+    "specification": [
+      "14-inch FHD display",
+      "AMD Ryzen 9 processor",
+      "32GB RAM",
+      "1TB SSD"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "13",
+    "product_title": "OnePlus 9 Pro",
+    "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729003/oneplus_vsd10c.webp",
+    "category": {
+      "name": "Smartphone",
+      "id": 2
+    },
+    "price": 899.99,
+    "description": "Flagship smartphone with Hasselblad camera.",
+    "specification": [
+      "6.7-inch Fluid AMOLED display",
+      "Quad camera system",
+      "5G capable"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "14",
+    "product_title": "MacBook Air (M1)",
+    "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729003/macbook_v4bwwc.webp",
+    "category": {
+      "name": "Laptop",
+      "id": 3
+    },
+    "price": 999.99,
+    "description": "Lightweight and powerful laptop with Apple M1 chip.",
+    "specification": [
+      "13.3-inch Retina display",
+      "8GB RAM",
+      "256GB SSD",
+      "Up to 18 hours of battery life"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "15",
+    "product_title": "Samsung QLED TV",
+    "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729006/tv_mln6hq.webp",
+    "category": {
+      "name": "Television",
+      "id": 6
+    },
+    "price": 1499.99,
+    "description": "Stunning QLED display with vibrant colors.",
+    "specification": [
+      "55-inch display",
+      "4K UHD",
+      "Smart TV features",
+      "Voice assistant compatible"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "16",
+    "product_title": "Logitech MX Master 3",
+    "product_image": "https://res.cloudinary.com/dogyg2j0h/image/upload/v1730729007/mouse_os3x9a.webp",
+    "category": {
+      "name": "Mouse",
+      "id": 7
+    },
+    "price": 99.99,
+    "description": "Advanced wireless mouse for productivity.",
+    "specification": [
+      "Ultra-fast scrolling",
+      "Ergonomic design",
+      "Multi-device support"
+    ],
+    "availability": true,
+    "rating": 4.7
+  }
+]

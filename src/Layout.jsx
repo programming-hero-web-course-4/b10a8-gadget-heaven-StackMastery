@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import AppContextProvider from "./context/AppContext/AppContextProvider";
 import Header from "./components/Layout/Header/ Header";
+import Footer from "./components/Layout/Footer/Footer";
 
 const Layout = () => {
   return (
@@ -8,7 +9,7 @@ const Layout = () => {
       <AppContextProvider>
         <Header />
         <Outlet/>
-        <h1>Footer</h1>
+        <Footer />
       </AppContextProvider>
     </>
   );
