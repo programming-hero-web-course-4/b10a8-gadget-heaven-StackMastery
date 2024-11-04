@@ -6,7 +6,6 @@ export const AppContext = createContext()
 const AppContextProvider = ({children}) => {
 
     const [activeCategory, setactiveCategory] = useState(1);
-
     const [allGadgetsData, setallGadgetsData] = useState();
 
     return (

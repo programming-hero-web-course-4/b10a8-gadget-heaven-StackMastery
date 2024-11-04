@@ -46,8 +46,8 @@ const GadgetShowcase = () => {
                                         {item.product_title.slice(0, 16)}
                                         <span className="text-stone-600">{item.product_title.length < 14 ? '' : '....'}</span>
                                     </h2>
-                                    <p className="text-stone-500">{item.price} TK</p>
-                                    <Link to={'k'}>
+                                    <p className="text-stone-500">{item.price} $</p>
+                                    <Link to={`product/${item.product_id}`}>
                                         <Button className={'!border-primary w-fit hover:!border-black hover:!text-black'}>
                                             View Details
                                         </Button>
@@ -65,18 +65,18 @@ const GadgetShowcase = () => {
 
 export default GadgetShowcase
 
-const categoryData = [
+export const categoryData = [
     {
         "id": 1,
         "name": "All Product"
     },
     {
-        "id": 2,
-        "name": "Smartphone"
-    },
-    {
         "id": 3,
         "name": "Laptop"
+    },
+    {
+        "id": 2,
+        "name": "Smartphone"
     },
     {
         "id": 4,

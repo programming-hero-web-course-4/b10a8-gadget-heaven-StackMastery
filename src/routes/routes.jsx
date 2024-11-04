@@ -1,7 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
-import Layout from "../Layout";
-import Home from "../pages/Home/Home";
-import Product from "../pages/Product/Product";
+import { createBrowserRouter } from 'react-router-dom';
+import Layout from '../Layout';
+import Home from '../pages/Home/Home';
+import Product from '../pages/Product/Product';
 
 export const router = createBrowserRouter([
     {
@@ -10,14 +10,15 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
             },
             {
                 path: '/product',
                 children: [
                     {
-                        path: ':id',
-                        element: <Product/>
+                        path: ':titleId', // Corrected typo here
+                        element: <Product />,
+                        loader: () => fetch('/src/json/gadgets.json').then(res => res.json()),
                     }
                 ]
             },
@@ -27,4 +28,4 @@ export const router = createBrowserRouter([
             }
         ]
     }
-])
+]);

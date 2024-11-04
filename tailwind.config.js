@@ -8,7 +8,8 @@ export default {
     extend: {
       colors:{
         'primary' : 'rgba(149, 56, 226, 1)',
-        'off-white': 'rgba(11, 11, 11, 0.7)'
+        'off-white': 'rgba(11, 11, 11, 0.7)',
+        'text-color': '#09080F'
       },
       fontFamily:{
         'primary' : 'Sora'
