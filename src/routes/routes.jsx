@@ -19,12 +19,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/product/:titleId',
-                loader: () => fetch('/src/json/gadgets.json').then(res => res.json()),
+                loader: () => fetch('/json/gadgets.json').then(res => res.json()),
                 element: <Product />
             },
             {
                 path: '/statistics',
-                loader: () => fetch('/src/json/gadgets.json').then(res => res.json()),
+                loader: () => fetch('/json/gadgets.json').then(res => res.json()),
                 element: <Statistics></Statistics>
             },
             {
@@ -33,12 +33,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/blogs',
-                loader: () => fetch('/src/json/blog.json').then(res => res.json()),
+                loader: () => fetch('/json/blog.json').then(res => res.json()),
                 element: <Blogs/>,
             },
             {
                 path: '/blog/:blogId',
-                loader: () => fetch('/src/json/blog.json').then(res => res.json()),
+                loader: () => fetch('/json/blog.json').then(res => res.json()),
                 element: <BlogPreview/>,
             },
             {

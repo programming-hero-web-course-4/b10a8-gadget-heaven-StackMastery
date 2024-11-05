@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import GadgetsData from '@/json/gadgets.json'; 
 import Heading from "../../Ui/Heading";
 import { AppContext } from "../../../context/AppContext/AppContextProvider";
 import Button from "../../Ui/Buttons";
@@ -7,11 +6,15 @@ import { Link } from "react-router-dom";
 
 const GadgetShowcase = () => {
 
-    const { activeCategory, setactiveCategory, setallGadgetsData, allGadgetsData } = useContext(AppContext)
-    
+    const { activeCategory, setactiveCategory, setallGadgetsData, allGadgetsData } = useContext(AppContext);
+
     useEffect(() => {
-        setallGadgetsData(GadgetsData)
+        fetch('/json/gadgets.json')
+            .then((response) => response.json())
+            .then((data) => setallGadgetsData(data))
+            .catch((error) => console.error("Error fetching JSON data:", error));
     }, [setallGadgetsData]);
+
         
     return (
         <>

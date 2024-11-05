@@ -19,6 +19,7 @@ const Product = () => {
     
 
     useEffect(() => {
+
         const findProduct = allProductData.find((product) => 
             product.product_id === `${titleId}`);
         
@@ -27,6 +28,8 @@ const Product = () => {
         document.title = `${findProduct?.product_title || 'Product Not Found'} | Gadget Heaven`
 
     }, [allProductData, titleId]);
+
+    const { product_image, product_title, description, availability, price, specification , product_id, rating} = singleProduct || {}
 
       
 
@@ -75,37 +78,37 @@ const Product = () => {
                                 ? (
                                     <>
                                             <div className="bg-stone-100 p-5 rounded-2xl flex justify-center border border-[#0000000e] w-full md:w-5/12">
-                                                <img className='object-cover' src={singleProduct.product_image} alt={singleProduct.product_title} />
+                                                <img className='object-cover' src={product_image} alt={product_title} />
                                             </div>
                                             <div className="w-full md:w-8/12 flex flex-col justify-start space-y-4">
                                                 <Heading className={'!text-2xl text-text-color'}>
-                                                    {singleProduct.product_title}
+                                                    {product_title}
                                                 </Heading>
-                                                <p className="font-medium text-[#09080fe6]">Price: $ {singleProduct.price}</p>
-                                                <span className={`text-xs py-1 px-5 ${singleProduct.availability ? 'border-[#309C08]  bg-green-100 text-[#309C08]' : 'border-red-600 bg-red-100 text-red-800'} border w-fit  rounded-full`}>
-                                                    {singleProduct.availability ? 'In Stock' : 'Out Stock'}
+                                                <p className="font-medium text-[#09080fe6]">Price: $ {price}</p>
+                                                <span className={`text-xs py-1 px-5 ${availability ? 'border-[#309C08]  bg-green-100 text-[#309C08]' : 'border-red-600 bg-red-100 text-red-800'} border w-fit  rounded-full`}>
+                                                    {availability ? 'In Stock' : 'Out Stock'}
                                                 </span>
                                                 <p className='text-xs text-off-white sm:text-sm'>
-                                                    {singleProduct.description}
+                                                    {description}
                                                 </p>
                                                 <p className="text-text-color font-medium">Specification:</p>
                                                 <ol className="list-decimal pl-5 text-off-white font-light">
                                                     {
-                                                        singleProduct.specification.map((item, index) => (
+                                                        specification.map((item, index) => (
                                                             <li key={index} className='text-sm'>{item}</li>
                                                         ))
                                                     }
                                                 </ol>
                                                 <p className="text-text-color font-medium">Rating: ⭐</p>
-                                                <Rating>{singleProduct.rating}</Rating>
+                                                <Rating>{rating}</Rating>
                                                 <div className='flex gap-5'>
                                                     <button onClick={() => {
                                                         createACart({
-                                                            title: singleProduct.product_title,
-                                                            des: singleProduct.description,
-                                                            price: singleProduct.price,
-                                                            image: singleProduct.product_image,
-                                                            id: singleProduct.product_id
+                                                            title: product_title,
+                                                            des: description,
+                                                            price: price,
+                                                            image: product_image,
+                                                            id: product_id
                                                         });
                                                     }} className={'py-2 px-5 rounded-full transition-all !bg-primary font-semibold !text-white flex gap-2 items-center hover:scale-90'}>
                                                         Add To Cart
