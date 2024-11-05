@@ -41,14 +41,16 @@ const GadgetShowcase = () => {
                                     key={index}
                                     className={`${activeCategory === 1 || activeCategory === item.category.id ? 'block' : 'hidden'} p-5 rounded-xl shadow-sm col-span-12 sm:col-span-6 lg:col-span-4 bg-white border gap-5 flex flex-col`}
                                     >
-                                    <img className="h-[300px] object-cover bg-stone-100 rounded-xl p-5 w-full" src={item.product_image} alt={item.product_title} />
+                                    <Link to={`product/${item.product_id}`} className="overflow-hidden rounded-xl">
+                                        <img className="h-[300px] hover:scale-125 transition-all object-cover bg-stone-100 rounded-xl p-5 w-full" src={item.product_image} alt={item.product_title} />
+                                    </Link>
                                     <h2 className="text-xl font-medium">
                                         {item.product_title.slice(0, 16)}
                                         <span className="text-stone-600">{item.product_title.length < 14 ? '' : '....'}</span>
                                     </h2>
                                     <p className="text-stone-500">{item.price} $</p>
                                     <Link to={`product/${item.product_id}`}>
-                                        <Button className={'!border-primary w-fit hover:!border-black hover:!text-black'}>
+                                        <Button className={'!border-primary w-fit hover:!border-black hover:!text-black font-medium'}>
                                             View Details
                                         </Button>
                                     </Link>

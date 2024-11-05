@@ -1,8 +1,9 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Turn as Hamburger } from 'hamburger-react'
 import CartIcon from '@/assets/icon/cart.svg'
 import LovetIcon from '@/assets/icon/love.svg'
+import { AppContext } from "../../../context/AppContext/AppContextProvider";
 
 
 const Header = () => {
@@ -12,9 +13,9 @@ const Header = () => {
 
     return (
         <>
-            <header className={`flex justify-center w-full absolute ${location.pathname === '/' ? 'translate-y-7' : 'bg-white border-b'} z-[999999]`}>
+            <header className={`flex justify-center w-full absolute ${location.pathname === '/' ? 'translate-y-7' : 'bg-white border-b'} z-[999]`}>
                 <div className={`w-primary py-3 flex justify-between items-center ${location.pathname === '/' ? 'p-14' : '!p-5'}`}>
-                    <Link className={`font-bold text-[23px] ${location.pathname === '/' ? 'text-white' : ''}`}>
+                    <Link className={`font-semibold text-[23px] ${location.pathname === '/' ? 'text-white' : ''}`}>
                         <p className="max-[380px]:hidden">Gadget Heaven</p>
                         <p className="max-[380px]:block hidden">GH</p>
                     </Link>
@@ -37,8 +38,8 @@ const Header = () => {
                                                 text-sm
                                                 ${
                                                     location.pathname === '/'
-                                                        ? `${isActive ? 'lg:text-white font-bold lg:underline' : ''} lg:text-white`
-                                                        : `${isActive ? 'text-primary font-bold' : ''}`
+                                                        ? `${isActive ? 'lg:text-white font-semibold lg:underline' : ''} lg:text-white`
+                                                        : `${isActive ? 'text-primary font-semibold' : ''}`
                                     
                                                 }
                                             `
@@ -77,17 +78,37 @@ export const menuData = [
     {name: 'Home', path: '/'},
     {name: 'Statistics', path: '/statistics'},
     {name: 'Dashboard', path: '/dashboard'},
+    {name: 'Blogs ', path: '/blogs'},
 ]
 
 const HeaderFeatures = ({className}) => {
+
+    const { cart, setactiveDashboardtabs , wishList} = useContext(AppContext)
+
     return (
         <>
             <div className={`hidden items-center gap-5 ${className}`}>  
-                <Link to={'/dashboard/cart'} className="border bg-white p-2 rounded-full border-stone-200 hover:scale-110 transition-all">
+                <Link to={'/dashboard'}
+                    onClick={() => {
+                        setactiveDashboardtabs(true)
+                    }} 
+                    className="border bg-white p-2 rounded-full border-stone-200 hover:scale-110 transition-all">
                     <img width={15} src={CartIcon} alt="Cart" />
+                    {cart.length > 0
+                        ? <span className="bg-white border border-stone-400 p-[2px] rounded-full px-[6px] text-[8px] absolute translate-x-3 -translate-y-7">{cart.length}</span>
+                        : ''
+                    }
                 </Link>
-                <Link to={'/dashboard/whistlist'} className="border bg-white p-2 rounded-full border-stone-200 hover:scale-110 transition-all">
+                <Link 
+                    onClick={() => {
+                        setactiveDashboardtabs(false)
+                    }}
+                    to={'/dashboard'} className="border bg-white p-2 rounded-full border-stone-200 hover:scale-110 transition-all">
                     <img width={15} src={LovetIcon} alt="Cart" />
+                    {wishList.length > 0
+                        ? <span className="bg-white border border-stone-400 p-[2px] rounded-full px-[6px] text-[8px] absolute translate-x-3 -translate-y-7">{wishList.length}</span>
+                        : ''
+                    }
                 </Link>
             </div>
         </>

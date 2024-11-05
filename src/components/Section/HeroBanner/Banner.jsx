@@ -13,7 +13,7 @@ const Banner = () => {
                             Upgrade Your Tech Accessorize with <br className='hidden md:block'/> Gadget Heaven Accessories
                         </Heading>
                         <p className='md:text-center text-xs sm:text-sm'>Explore the latest gadgets that will take your experience to the next level. From smart devices to<br className='hidden md:block'/>  the coolest accessories, we have it all!</p>
-                        <Link className='self-start md:self-center'>
+                        <Link to={'/dashboard'} className='self-start md:self-center'>
                             <Button>
                                 Shop Now
                             </Button>

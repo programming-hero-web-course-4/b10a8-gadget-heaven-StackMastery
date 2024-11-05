@@ -1,42 +1,73 @@
 import LovetIcon from '@/assets/icon/love.svg'
 import React, { useContext, useEffect, useState } from 'react';
-import Heading from "../../components/Ui/Heading";
 import Rating from '../../components/Ui/Rating';
 import Button from '../../components/Ui/Buttons';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import CartWhiteIcon from '@/assets/icon/cartwhite.svg'
+import Heading from "@/components/Ui/Heading";
 import { IoReturnUpBack } from "react-icons/io5";
+import Titlebar from '../../components/Section/TitleBar/Titlebar';
+import { AppContext } from '../../context/AppContext/AppContextProvider';
+import toast from 'react-hot-toast';
 
 const Product = () => {
 
     const {titleId} = useParams()
     const allProductData = useLoaderData()
     const [singleProduct, setsingleProduct] = useState();
+    const { setCart, cart, wishList, setWishList } = useContext(AppContext)
+    
 
     useEffect(() => {
         const findProduct = allProductData.find((product) => 
             product.product_id === `${titleId}`);
         
         setsingleProduct(findProduct);
+
+        document.title = `${findProduct?.product_title || 'Product Not Found'} | Gadget Heaven`
+
     }, [allProductData, titleId]);
+
       
 
-    console.log(singleProduct);
+    const createACart = (product) => {
+        const cartExist = cart.filter((item) => item.id === product.id)
+
+        if(cartExist.length === 0){
+            setCart([
+                ...cart,
+                product
+            ]),
+            toast.success('Add To Cart Succesfuly')
+        }else{
+            toast.error('Already In Cart')
+        }
+
+    }; 
+
+    const createWishList = (product) => {
+        const wishListExist = wishList.filter((item) => item.id === product.id)
+        if(wishListExist.length === 0){
+            setWishList([...wishList, product]),
+            toast.success('Product Added To Wishlist')
+        }else{
+            toast.error('Already In Wishlist')
+        }  
+    }
+
     
     return (
         <>
-            <section className="flex justify-center w-full pt-[77px]">
-                <div className="w-full bg-primary py-10 space-y-5 px-5 pb-36">
-                    <Heading className={'text-white text-center !text-3xl'}>
-                        Product Details
-                    </Heading>
-                    <p className='text-center text-xs sm:text-sm text-white'>
+            <Titlebar
+            classNameChild={'pb-64'}
+                title={'Product Details'}
+            >
+                    <p className='text-center  text-xs sm:text-sm text-white'>
                         Explore the latest gadgets that will take your experience to the next level. From smart devices to
                         <br className='hidden md:block' /> the coolest accessories, we have it all!
                     </p>
-                </div>
-            </section>
-            <section className="flex justify-center w-full -mt-36">
+            </Titlebar>
+            <section className="flex justify-center w-full -mt-64">
                 <div className="flex w-primary px-5 py-10">
                     <div className="w-full flex bg-white shadow-md p-10 rounded-2xl justify-between gap-10 flex-col md:flex-row">
                         {
@@ -51,8 +82,8 @@ const Product = () => {
                                                     {singleProduct.product_title}
                                                 </Heading>
                                                 <p className="font-medium text-[#09080fe6]">Price: $ {singleProduct.price}</p>
-                                                <span className="text-xs py-1 px-5 border-[#309C08] border w-fit bg-green-100 text-[#309C08] rounded-full">
-                                                    In Stock
+                                                <span className={`text-xs py-1 px-5 ${singleProduct.availability ? 'border-[#309C08]  bg-green-100 text-[#309C08]' : 'border-red-600 bg-red-100 text-red-800'} border w-fit  rounded-full`}>
+                                                    {singleProduct.availability ? 'In Stock' : 'Out Stock'}
                                                 </span>
                                                 <p className='text-xs text-off-white sm:text-sm'>
                                                     {singleProduct.description}
@@ -68,11 +99,29 @@ const Product = () => {
                                                 <p className="text-text-color font-medium">Rating: ⭐</p>
                                                 <Rating>{singleProduct.rating}</Rating>
                                                 <div className='flex gap-5'>
-                                                    <Button className={'!bg-primary font-semibold !text-white flex gap-2 items-center hover:scale-90'}>
+                                                    <button onClick={() => {
+                                                        createACart({
+                                                            title: singleProduct.product_title,
+                                                            des: singleProduct.description,
+                                                            price: singleProduct.price,
+                                                            image: singleProduct.product_image,
+                                                            id: singleProduct.product_id
+                                                        });
+                                                    }} className={'py-2 px-5 rounded-full transition-all !bg-primary font-semibold !text-white flex gap-2 items-center hover:scale-90'}>
                                                         Add To Cart
-                                                        <img src={CartWhiteIcon} alt="" />
-                                                    </Button>
-                                                    <button className="border bg-white p-2 px-3 rounded-full border-stone-300 hover:scale-110 transition-all">
+                                                        <img src={CartWhiteIcon} alt="Cart icon" />
+                                                    </button>
+                                                    <button
+                                                        onClick={() => {
+                                                            createWishList({
+                                                                title: singleProduct.product_title,
+                                                                des: singleProduct.description,
+                                                                price: singleProduct.price,
+                                                                image: singleProduct.product_image,
+                                                                id: singleProduct.product_id
+                                                            })
+                                                        }}
+                                                        className="border bg-white p-2 px-3 rounded-full border-stone-300 hover:scale-125 transition-all">
                                                         <img width={15} src={LovetIcon} alt="Cart" />
                                                     </button>
                                                 </div>
