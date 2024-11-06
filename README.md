@@ -1,11 +1,27 @@
-# 🌟 Gadget Heaven
+# 📄 Gadget Heaven
 
-Welcome to the **Gadget Heaven** project! This is the **8th assignment for Programming Hero**. The assignment started on **November 3, 2024** and is due on **November 6, 2024**. During the project, I hvae fetched many problem to complete this assignment Exampale When I'm Trying to use a header in 2 style then i' have fetch some problem , Product Fetch Problem Etc 
+Welcome to the **Gadget Heaven** project! This is the **8th assignment for Programming Hero**. The assignment started on **November 3, 2024** and is due on **November 6, 2024**, and is due on November 6, 2024. During this project, I encountered several challenges, such as using multiple styles for the header and fetching product data.
 
 ---
 
 ## 🚀 Project Overview
 Gadget Heaven Is a electronic devices shop system . to make this web i used react framework 
+
+--
+
+> [!CAUTION]
+> this Project Requierments Doc Link <a href="https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf">Click To Preview</a>
+
+---
+
+## ⚙️ React Fundamental concepts used in the project
+
+- **Context Api** -
+- **UseEffect** -
+- **UseState** -
+- **React Router Dom** -
+- **React Components** -
+- **Custom Hook** -
 
 ---
 
@@ -20,6 +36,16 @@ Gadget Heaven Is a electronic devices shop system . to make this web i used reac
 - **SVG** - Scalable vector graphics for UI elements
 - **React** - Frontend framework for dynamic components
 - **React Hot Toastify** - Elegant toast notifications
+
+---
+
+## ✨ Key Fetures
+- **Responsive Design** - Responsive Design For All Devices
+- **Awesome Toast Notification** - Toast Notification Awesome Succes, Warning , Pending And Error Design
+- **Blog Page** - Nice Design Blog Page With Blog details Route
+- **Add To Cart and Wishlist** - Add to Cart And Wish List System
+- **React Hamburger** - Animated Hamburger
+- **Well Structured Layout** - All HTML Block Layout Well Structured
 
 ---
 
