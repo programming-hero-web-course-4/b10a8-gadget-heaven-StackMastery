@@ -14,6 +14,7 @@ const Dashboard = () => {
         cart, 
         setCart, 
         setWishList, 
+        setheaderIsHome,
         wishList 
     } = useContext(AppContext);
 
@@ -21,6 +22,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         document.title = `Dashboard | Gadget Heaven`;
+        setheaderIsHome(false)
     }, []);
 
     const removeCart = (cartId) => {
@@ -131,7 +133,7 @@ const Dashboard = () => {
                                         </div>
                                         <div className="w-full flex flex-col py-10 gap-5">
                                             {cart && cart.map((item, index) => (
-                                                <div key={index} className="p-7 rounded-xl border flex gap-7 flex-col min-[400px]:flex-row">
+                                                <div key={index} className="p-7 rounded-xl border flex gap-7 flex-col min-[400px]:flex-row bg-white">
                                                     <img className="bg-stone-100 object-cover h-32 rounded-xl" alt={item.title} src={item.image} />
                                                     <div className="flex justify-between w-full h-full">
                                                         <div className="flex justify-around flex-col">
@@ -164,7 +166,7 @@ const Dashboard = () => {
                                 wishList.map((item, index) => (
                                     <>
                                         <h3 className="font-semibold text-xl px-5">Wishlist</h3> 
-                                        <div key={index} className="p-7 rounded-xl border flex gap-7 flex-col min-[400px]:flex-row">
+                                        <div key={index} className="p-7 rounded-xl border flex gap-7 flex-col min-[400px]:flex-row bg-white">
                                             <img className="bg-stone-100 object-cover h-44 rounded-xl" alt={item.title} src={item.image} />
                                             <div className="flex justify-between w-full h-full">
                                                 <div className="flex justify-around flex-col h-full gap-5">
@@ -191,12 +193,12 @@ const Dashboard = () => {
                                         <div className="bg-stone-100 h-44 w-full min-[400px]:w-1/4 rounded-xl"></div>
                                         <div className="flex justify-between w-full h-full">
                                             <div className="flex flex-col justify-around h-full gap-5 w-full">
-                                                <div className="h-6 bg-gray-300 rounded w-3/4"></div> {/* Title skeleton */}
-                                                <div className="h-4 bg-gray-200 rounded w-2/3"></div> {/* Description skeleton */}
-                                                <div className="h-4 bg-gray-200 rounded w-1/2"></div> {/* Price skeleton */}
-                                                <div className="bg-primary h-10 w-28 rounded-full"></div> {/* Button skeleton */}
+                                                <div className="h-6 bg-gray-300 rounded w-3/4"></div> 
+                                                <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+                                                <div className="h-4 bg-gray-200 rounded w-1/2"></div> 
+                                                <div className="bg-primary h-10 w-28 rounded-full"></div>
                                             </div>
-                                            <div className="h-8 w-8 bg-gray-300 rounded-full"></div> {/* Icon skeleton */}
+                                            <div className="h-8 w-8 bg-gray-300 rounded-full"></div> 
                                         </div>
                                     </div>
                                     </div>

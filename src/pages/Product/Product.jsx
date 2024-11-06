@@ -15,7 +15,7 @@ const Product = () => {
     const {titleId} = useParams()
     const allProductData = useLoaderData()
     const [singleProduct, setsingleProduct] = useState();
-    const { setCart, cart, wishList, setWishList } = useContext(AppContext)
+    const { setCart, cart, wishList, setWishList, setheaderIsHome } = useContext(AppContext)
     
 
     useEffect(() => {
@@ -26,6 +26,7 @@ const Product = () => {
         setsingleProduct(findProduct);
 
         document.title = `${findProduct?.product_title || 'Product Not Found'} | Gadget Heaven`
+        setheaderIsHome(false)
 
     }, [allProductData, titleId]);
 
@@ -82,9 +83,9 @@ const Product = () => {
                                             </div>
                                             <div className="w-full md:w-8/12 flex flex-col justify-start space-y-4">
                                                 <Heading className={'!text-2xl text-text-color'}>
-                                                    {product_title}
+                                                    {product_title || 'N/A'}
                                                 </Heading>
-                                                <p className="font-medium text-[#09080fe6]">Price: $ {price}</p>
+                                                <p className="font-medium text-[#09080fe6]">Price: $ {price || 'N/A'}</p>
                                                 <span className={`text-xs py-1 px-5 ${availability ? 'border-[#309C08]  bg-green-100 text-[#309C08]' : 'border-red-600 bg-red-100 text-red-800'} border w-fit  rounded-full`}>
                                                     {availability ? 'In Stock' : 'Out Stock'}
                                                 </span>
@@ -94,13 +95,16 @@ const Product = () => {
                                                 <p className="text-text-color font-medium">Specification:</p>
                                                 <ol className="list-decimal pl-5 text-off-white font-light">
                                                     {
-                                                        specification.map((item, index) => (
-                                                            <li key={index} className='text-sm'>{item}</li>
-                                                        ))
+                                                        specification.length !== 0 ? (
+                                                            specification.map((item, index) => (
+                                                                <li key={index} className='text-sm'>{item}</li>
+                                                            ))
+                                                        )
+                                                        : <p className='-ml-5'>Not Provided</p>
                                                     }
                                                 </ol>
                                                 <p className="text-text-color font-medium">Rating: ⭐</p>
-                                                <Rating>{rating}</Rating>
+                                                <Rating>{rating || 0}</Rating>
                                                 <div className='flex gap-5'>
                                                     <button onClick={() => {
                                                         createACart({

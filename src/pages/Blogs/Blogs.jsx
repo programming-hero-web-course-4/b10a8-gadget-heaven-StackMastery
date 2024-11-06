@@ -1,13 +1,16 @@
 import { useLoaderData, Link } from "react-router-dom";
 import Titlebar from "../../components/Section/TitleBar/Titlebar";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from '../../context/AppContext/AppContextProvider';
 
 const Blogs = () => {
 
     const allBlogs = useLoaderData()
+  const { setheaderIsHome } = useContext(AppContext)
 
     useEffect(() => {
         document.title = 'Blogs | Gadget Heaven'
+        setheaderIsHome(false)
       }, []);    
 
     const [categoryFilter, setCategoryFilter] = useState('0');

@@ -10,6 +10,7 @@ const AppContextProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const [wishList, setWishList] = useState([]);
     const [activeDashboardTabs, setactiveDashboardtabs] = useState(true);
+    const [headerIsHome, setheaderIsHome] = useState();
 
     return (
         <>
@@ -19,7 +20,8 @@ const AppContextProvider = ({children}) => {
                     allGadgetsData, setallGadgetsData ,
                     cart, setCart,
                     activeDashboardTabs, setactiveDashboardtabs,
-                    wishList, setWishList
+                    wishList, setWishList,
+                    headerIsHome, setheaderIsHome
                 }}>
                 {children}
             </AppContext.Provider>

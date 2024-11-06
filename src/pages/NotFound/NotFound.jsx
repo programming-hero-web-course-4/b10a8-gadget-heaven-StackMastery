@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Image404 from '@/assets/images/404.svg';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../../context/AppContext/AppContextProvider';
 
 const NotFound = () => {
+
+    const { setheaderIsHome } = useContext(AppContext)
+
+    useEffect(() => {
+        document.title = 'Page Not found | Gadget Heaven'
+        setheaderIsHome(false)
+    })
+
     return (
         <section className="flex justify-center">
             <div className=" min-h-screen px-6 lg:flex py-40 lg:items-center lg:gap-12 w-primary">

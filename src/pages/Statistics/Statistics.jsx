@@ -1,14 +1,17 @@
 import { useLoaderData } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Titlebar from '../../components/Section/TitleBar/Titlebar';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import { AppContext } from '../../context/AppContext/AppContextProvider';
 
 const Statistics = () => {
 
-    const data = useLoaderData()
+  const data = useLoaderData()
+  const { setheaderIsHome } = useContext(AppContext)
 
   useEffect(() => {
     document.title = 'Statistics | Gadget Heaven'
+    setheaderIsHome(false)
   }, []);    
   return (
     <>
