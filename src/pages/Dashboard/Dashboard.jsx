@@ -162,10 +162,10 @@ const Dashboard = () => {
                 <section className="flex justify-center">
                     <div className="w-primary">
                         <div className="w-full flex flex-col py-10 gap-5 p-5">
+                            <h3 className="font-semibold text-xl ">Wishlist</h3> 
                             {wishList.length !== 0 ? (
                                 wishList.map((item, index) => (
                                     <>
-                                        <h3 className="font-semibold text-xl px-5">Wishlist</h3> 
                                         <div key={index} className="p-7 rounded-xl border flex gap-7 flex-col min-[400px]:flex-row bg-white">
                                             <img className="bg-stone-100 object-cover h-44 rounded-xl" alt={item.title} src={item.image} />
                                             <div className="flex justify-between w-full h-full">
