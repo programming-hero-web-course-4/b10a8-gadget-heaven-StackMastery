@@ -69,7 +69,7 @@ To get started with Gagget Heaven on your local machine, follow these steps:
    npm run dev
 
 ## 🌐 Live Demo
-Experience the BPL Dream 11 project live! <a href="https://gadget-heaven-assignment-8-ph.netlify.app/">Demo Link</a>
+Experience the Gadget Heaven project live! <a href="https://gadget-heaven-assignment-8-ph.netlify.app/">Demo Link</a>
 
 ![Demo Image](https://res.cloudinary.com/dogyg2j0h/image/upload/v1730899141/screencapture-gadget-heaven-assignment-8-ph-netlify-app-2024-11-06-06_16_30_kjzj6k.png)
 
